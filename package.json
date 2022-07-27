@@ -1,6 +1,6 @@
 {
   "name": "react-kbi-si-en",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "react-kbi-si-en React component",
   "main": "lib/index.js",
   "module": "es/index.js",
