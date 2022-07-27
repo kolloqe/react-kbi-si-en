@@ -1,16 +1,68 @@
 # react-kbi-si-en
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+Kolloqe Input Component with code-switching support between Sinhala and English
 
-Describe react-kbi-si-en here.
+## Setting up the Dev Environmet
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+The original package was created using [`nwb`](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md). So, to set up a dev environment, the `node_modules` dir initialized using `nwb new react-component` is required to begin with.
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+- Clone this repo
+- Simply run `nwb new react-component cache` to create a cache project
+- Copy-paste the `node_modules` dir to the root of the project
+- Get rid of the cached project `cache`
+- Run `npm i` to install additional packages
+- Run `npm start` to run the dev server
+- This project adhears to all the commands executable inside a `nwb new react-component` project
+    1. `npm start` - runs the demo
+    2. `npm run build` - builds modules
+    3. `npm publish` - builds and publishes to npm (set up the package.json accordingly)
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+## Releasing
+
+- When the version is bumped, first do the versioning in the package.json
+- run `npm run build` to build the latest build. (This is optional. `npm publish` can take care of this internally)
+- run `npm publish` to get the transpiled js modules and push to npmjs
+
+## Usage in a React Project
+
+The component can be easily consumed within a React project as given below.  
+
+### Installation
+
+The package can be pulled from NPM as follows.
+
+```bash
+npm i @kolloqe/input
+```
+
+Then can be attached to any React component as specified below.
+
+```jsx
+import KeyboardInput from '@kolloqe/input';
+
+<KeyboardInput
+  interface={"input"}
+  value={""}
+  placeholder="Type a message here..."
+  className={"w-100 kolloqe-widget-message"}
+  disableUnderline={true}
+  defaultLanguage={localStorage.getItem(`${localStorageKeys.kolloqeSelectedLang}`) || this.props.defaultLang}
+  ref={messageRef => this.messageRef = messageRef}
+  handleChange={(e) => { this.handleMessageChange(e) }}
+  handleTextChange={this.handleMessageChangeText}
+  handleShortcut={this.handleLanguage}
+  handleEnter={this.handleMessageSend}
+  enableShortcuts={this.props.enableShortcuts}
+  shortcutKey={this.props.shortcutKey} />
+```
+
+## List of Props
+
+{To be updated}
+Refer the [Official Docs](https://kolloqe.github.io) for more details on passing props to kolloqe input component.
+
+- All props are similar to the MUI Input/ Textfield API. Refer the MUI docs: [Input API](https://mui.com/material-ui/api/input/) / [TextField API](https://mui.com/material-ui/api/text-field/)
+
+## Limitations
+
+- Styling is not supported via props. It should be done manually through overriding relevent CSS classes for now.
