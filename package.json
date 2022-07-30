@@ -33,12 +33,22 @@
     "react-dom": "^18.2.0",
     "prop-types": "^15.8.1"
   },
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
-  "repository": "",
+  "author": "Dinushi Jayasinghe",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kolloqe/react-kbi-si-en/issues"
+  },
+  "homepage": "https://github.com/kolloqe/react-kbi-si-en#readme",
+  "repository": {
+    "url": "git+https://github.com/kolloqe/react-kbi-si-en.git"
+  },
   "keywords": [
-    "react-component"
+    "kolloqe",
+    "rasa",
+    "input",
+    "mui",
+    "sinhala",
+    "code-switching"
   ],
   "dependencies": {
     "@emotion/react": "^11.9.3",
